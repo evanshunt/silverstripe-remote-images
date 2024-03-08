@@ -1,0 +1,16 @@
+---
+Name: webproxy-assetstore
+Only:
+  envvarset: REMOTE_IMAGES_PROXY_HOST
+After:
+  - '#assetsflysystem'
+  - '#assetscore'
+---
+
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Assets\Storage\AssetStore:
+    class: EvansHunt\RemoteImagesProxy\RemoteProxyAssetStore
+
+SilverStripe\Assets\Storage\DBFile:
+  extensions:
+    - EvansHunt\RemoteImagesProxy\DBFileExtension

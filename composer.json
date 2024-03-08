@@ -1,0 +1,28 @@
+{
+    "name": "evanshunt/silverstripe-remote-images",
+    "description": "A Silverstripe module that can pull in images from a remote site for local display",
+    "type": "silverstripe-vendormodule",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "EvansHunt\\RemoteImagesProxy\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "David Toews",
+            "email": "davejtoews@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "silverstripe/framework": "^4 | ^5",
+        "jakeasmith/http_build_url": "^1.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "silverstripe/vendor-plugin": true
+        }
+    }
+}
