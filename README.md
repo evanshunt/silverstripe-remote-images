@@ -18,4 +18,4 @@ REMOTE_IMAGES_PROXY_HOST=http://example.com
 
 ## Known issues
 
-Currently this module will not download the remote file, just inject it into the markup.
+Files are downloaded locally, but not totally recognized by the CMS, leading to some not being cropped and issues in the assets admin area.
