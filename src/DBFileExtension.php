@@ -13,6 +13,12 @@ class DBFileExtension extends Extension
         $localFilename = preg_replace('/\/' . ASSETS_DIR . '/', '', $url);
         $localPath = ASSETS_PATH . $localFilename;
 
+        // Probably not sufficient to prevent all issues and perhaps not a specific enough request
+        // But this prevents errors on CMS upload.
+        if (Controller::curr()->getRequest()->param('Action') === 'upload') {
+            return $url;
+        }
+
         if (!file_exists($localPath)) {
             $remoteUrl = \http_build_url(
                 Environment::getEnv('REMOTE_IMAGES_PROXY_HOST'),
